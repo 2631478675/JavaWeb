@@ -22,12 +22,16 @@
 hs_err_pid*
 
 # IntelliJ project files
-.idea
+.idea/
 *.iml
-out
-gen
-class/
+out/
+*.class
 target/
+WebContent/
+classes/
+
+
+
 
 # properties
 *.properties
