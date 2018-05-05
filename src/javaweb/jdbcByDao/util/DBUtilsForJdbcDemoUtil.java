@@ -1,19 +1,19 @@
-package javaweb.jdbcBase.util;
+package javaweb.jdbcByDao.util;
 
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class DBUtilsForJdbcDemo {
+public class DBUtilsForJdbcDemoUtil {
 
 //    public final static String URL = "jdbc:mysql//localhost:3306/jdbc_test";
 //    public final static String USERNAME = "root";
 //    public final static String PASSWORD = "123456";
 //    public final static String DRIVER = "com.mysql.jdbc.Driver";
 
-    public  static String URL = "jdbc:mysql//localhost:3306/jdbc_test";
-    public  static String USERNAME = "root";
-    public  static String PASSWORD = "123456";
-    public  static String DRIVER = "com.mysql.jdbc.Driver";
+    public  static String URL = null;
+    public  static String USERNAME = null;
+    public  static String PASSWORD = null;
+    public  static String DRIVER = null;
 
     /**
      * 读取配置文件
@@ -21,7 +21,7 @@ public class DBUtilsForJdbcDemo {
 
     private static ResourceBundle resourceBundle=ResourceBundle.getBundle("classpath:db-config");
     //私有化，防止util实例化
-    private DBUtilsForJdbcDemo(){
+    private DBUtilsForJdbcDemoUtil(){
 
     }
 
@@ -49,14 +49,14 @@ public class DBUtilsForJdbcDemo {
         return  connection;
     }
 
-    public static void close(ResultSet resultSet, Statement statement, PreparedStatement preparedStatement){
+    public static void close(ResultSet resultSet, Connection connection, PreparedStatement preparedStatement){
 
             try {
                 if(resultSet!=null){
                     resultSet.close();
                 }
-               if(statement!=null){
-                    statement.close();
+               if(connection!=null){
+                    connection.close();
                }
                if(preparedStatement!=null){
                     preparedStatement.close();

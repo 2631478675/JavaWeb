@@ -1,5 +1,7 @@
 package javaweb.jdbcBase;
 
+import javaweb.jdbcBase.util.DBUtilsForJdbcDemo;
+
 import java.sql.*;
 
 /**
@@ -7,18 +9,20 @@ import java.sql.*;
  * ①提高安全性：使用占位符防止SQL注入
  */
 public class JdbcDemoByPreparedStatement {
+
     public final static String URL = "jdbc:mysql//localhost:3306/jdbc_test";
     public final static String USERNAME = "root";
     public final static String PASSWORD = "123456";
     public final static String DRIVER = "com.mysql.jdbc.Driver";
 
     /**
-     * 使用PreParedStatement
+     * 使用PreParedStatement和工具类 DBUtilsForJdbcDemoUtil
      */
     public static void insertByPreParedStatement(Student student) {
         try {
-            Class.forName(DRIVER);
-            Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+//            Class.forName(DRIVER);
+//            Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            Connection connection= DBUtilsForJdbcDemo.getConnection();
             String sql = "insert into student (name,age)values(?,?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             //设置SQL语句中占位符的值
@@ -26,10 +30,10 @@ public class JdbcDemoByPreparedStatement {
             preparedStatement.setInt(2, student.getAge());
             preparedStatement.executeUpdate();
             preparedStatement.close();
-            connection.close();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
+            connection.close(); }
+//            catch (ClassNotFoundException e) {
+//            e.printStackTrace(); }
+            catch (SQLException e) {
             e.printStackTrace();
         }
     }
