@@ -14,6 +14,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * 使用commands-upload组件实现文件上传
+ */
 public class FileUpload_two extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
