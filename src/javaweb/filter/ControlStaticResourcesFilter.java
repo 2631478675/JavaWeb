@@ -8,6 +8,7 @@ import java.io.IOException;
 
 /**
  * Filter to control static resources in browser cache pages
+ * 控制浏览器缓存（一般css 3个月  image 1个月  js 3个月）:这里为了方便，设为一致的
  */
 public class ControlStaticResourcesFilter implements Filter {
 
@@ -28,10 +29,9 @@ public class ControlStaticResourcesFilter implements Filter {
 
         if(url.endsWith(".css")||url.endsWith(".js")||url.endsWith(".jpg")){
             long expiresTime = Long.parseLong(this.filterConfig.getInitParameter("jpg"));
-            //3.用缓存时间设置response相应的缓存头
-            response.setDateHeader("expires", System.currentTimeMillis() + expiresTime*60*1000);
+            //用缓存时间设置response相应的缓存头
+            response.setDateHeader("Expires", System.currentTimeMillis() + expiresTime*60*1000);
 
-            //4.把设好头的response放给目标资源执行，从而实现目标资源的缓存
             filterChain.doFilter(request, response);
         }
         else {
