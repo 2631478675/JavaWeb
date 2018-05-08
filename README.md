@@ -19,6 +19,10 @@ Implement JavaWeb basic functionality
 - filter使用：
     - 过滤器映射到servlet（ 配置在servlet下面 ）
     - 自定义filter（MyFilter）实现接口Filter 
+    - ControlStaticResourcesFilter:控制静态资源
+    - XXSFilter
+    - SQLFilter
+    - PreventDynamicCacheFilter:阻止存储动态页面
 - interceptor和filter的区别
     - Filter是基于函数回调的，而Interceptor则是基于Java反射的。
     - Filter依赖于Servlet容器，而Interceptor不依赖于Servlet容器。
