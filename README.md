@@ -34,6 +34,14 @@ Implement JavaWeb basic functionality
     - 使用servlet3.0的新特性(FileUpload_servlet_three)
     - 使用springmvc
 - 实现文件下载
+- io流
+    - 字节流：8bit（FileInputOutputStream对应）
+        - InputStream
+        - OutputStream
+    - 字符流：16bit(FileReaderWriter对应char)
+        - Reader
+        - Writer
+    - 缓冲流：（Buffered，，，）
 - 实现日志添加
     - 配置文件log4j2.xml
     - 在web.xml配置
