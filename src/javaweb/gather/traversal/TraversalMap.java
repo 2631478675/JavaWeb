@@ -1,8 +1,6 @@
 package javaweb.gather.traversal;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 /**
  * four ways to traverse map
