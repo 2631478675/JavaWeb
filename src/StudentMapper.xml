@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="javaweb.mybatisUseSqlSession.dao.StudentMapper">
+    <!--
+    namespace:名称空间;指定为接口的全类名
+    id：唯一标识
+    resultType：返回值类型
+    #{id}：从传递过来的参数中取出id值
+    #:占位符变量
+
+    public Employee getEmpById(Integer id);
+     -->
+    <select id="getStudentId" resultType="javaweb.mybatisUseSqlSession.pojo.Student">
+        select student_id id,student_name name,student_gender gender,student_age age,student_address address from student where student_id = #{id}
+    </select>
+</mapper>
