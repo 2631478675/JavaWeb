@@ -1,4 +1,4 @@
-package javaweb.mybatisUseSqlSession;
+package javaweb.mybatisUseSqlSession.test;
 
 import java.io.IOException;
 import java.io.InputStream;
