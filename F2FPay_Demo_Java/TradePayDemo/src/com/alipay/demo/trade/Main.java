@@ -33,7 +33,7 @@ import java.util.*;
  * sdk和demo的意见和问题反馈请联系：liuyang.kly@alipay.com
  */
 public class Main {
-    private static Log                  log = LogFactory.getLog(Main.class);
+    private static Log     log = LogFactory.getLog(Main.class);
 
     // 支付宝当面付2.0服务
     private static AlipayTradeService   tradeService;
