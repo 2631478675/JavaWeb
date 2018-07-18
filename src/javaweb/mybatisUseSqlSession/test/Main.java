@@ -5,10 +5,15 @@ import java.io.InputStream;
 
 import javaweb.mybatisUseSqlSession.dao.StudentMapper;
 import javaweb.mybatisUseSqlSession.pojo.Student;
+import org.apache.ibatis.exceptions.ExceptionFactory;
+import org.apache.ibatis.executor.ErrorContext;
+import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.apache.ibatis.mapping.Environment;
+import org.apache.ibatis.session.*;
+import org.apache.ibatis.session.defaults.DefaultSqlSession;
+import org.apache.ibatis.transaction.Transaction;
+import org.apache.ibatis.transaction.TransactionFactory;
 import org.junit.Test;
 
 public class Main {
@@ -68,4 +73,5 @@ public class Main {
         }
 
     }
+
 }
