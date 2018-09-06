@@ -28,4 +28,17 @@ out/**
 *.class
 WebContent/**
 classes/**
+.idea/
+*.ipr
+*.iml
+*.iws
+lib/
+.idea/**
+web/**
+/target/**
+/.mvn/**
+/**/.mvn/**
+/**/mvnw
+/**/mvnw.cmd
+/**/.gitignore
 
