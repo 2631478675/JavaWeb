@@ -99,7 +99,7 @@ public class CreateTree {
             for(;root.left != null ;root = root.left){
                 stack.push(root);
             }
-            // if node.right has read or null , sout
+            // if node.right has read or null ,   sout
             while(root != null&&(root.right == null || root.right == p )){
                 System.out.println(root.data);
                 p = root;
